@@ -2,29 +2,29 @@
 function setUpSpecialNavs() {
     $(".navbar-toggle").click(function(t) {
         var e = $(this).closest("nav"),
-            i = e.find("ul.site-navigation"),
-            a = i.clone();
+        i = e.find("ul.site-navigation"),
+        a = i.clone();
         if (i.parent().hasClass("nav-special"))
-            if (t.stopPropagation(), $(this).hasClass("selected-nav")) $(".blocsapp-special-menu blocsnav").removeClass("open"), $(".selected-nav").removeClass("selected-nav"), setTimeout(function() {
-                $(".blocsapp-special-menu").remove(), $("body").removeClass("lock-scroll"), $(".selected-nav").removeClass("selected-nav")
-            }, 300);
-            else {
-                $(this).addClass("selected-nav");
-                var o = e.attr("class").replace("navbar", "").replace("row", ""),
-                    l = i.parent().attr("class").replace("navbar-collapse", "").replace("collapse", "");
-                ($(".content-tint").length = -1) && $("body").append('<div class="content-tint"></div>'), a.insertBefore(".page-container").wrap('<div class="blocsapp-special-menu ' + o + '"><blocsnav class="' + l + '">'), $("blocsnav").prepend('<a class="close-special-menu animated fadeIn" style="animation-delay:0.5s;"><div class="close-icon"></div></a>'),
-                    function() {
-                        var t = "fadeInRight",
-                            e = 0,
-                            i = 60;
-                        $(".blocsapp-special-menu blocsnav").hasClass("fullscreen-nav") ? (t = "fadeIn", i = 100) : $(".blocsapp-special-menu").hasClass("nav-invert") && (t = "fadeInLeft");
-                        $(".blocsapp-special-menu blocsnav li").each(function() {
-                            $(this).parent().hasClass("dropdown-menu") ? $(this).addClass("animated fadeIn") : (e += i, $(this).attr("style", "animation-delay:" + e + "ms").addClass("animated " + t))
-                        })
-                    }(), setTimeout(function() {
-                        $(".blocsapp-special-menu blocsnav").addClass("open"), $(".content-tint").addClass("on"), $("body").addClass("lock-scroll")
-                    }, 10)
-            }
+        if (t.stopPropagation(), $(this).hasClass("selected-nav")) $(".blocsapp-special-menu blocsnav").removeClass("open"), $(".selected-nav").removeClass("selected-nav"), setTimeout(function() {
+            $(".blocsapp-special-menu").remove(), $("body").removeClass("lock-scroll"), $(".selected-nav").removeClass("selected-nav")
+        }, 300);
+        else {
+            $(this).addClass("selected-nav");
+            var o = e.attr("class").replace("navbar", "").replace("row", ""),
+            l = i.parent().attr("class").replace("navbar-collapse", "").replace("collapse", "");
+            ($(".content-tint").length = -1) && $("body").append('<div class="content-tint"></div>'), a.insertBefore(".page-container").wrap('<div class="blocsapp-special-menu ' + o + '"><blocsnav class="' + l + '">'), $("blocsnav").prepend('<a class="close-special-menu animated fadeIn" style="animation-delay:0.5s;"><div class="close-icon"></div></a>'),
+            function() {
+                var t = "fadeInRight",
+                e = 0,
+                i = 60;
+                $(".blocsapp-special-menu blocsnav").hasClass("fullscreen-nav") ? (t = "fadeIn", i = 100) : $(".blocsapp-special-menu").hasClass("nav-invert") && (t = "fadeInLeft");
+                $(".blocsapp-special-menu blocsnav li").each(function() {
+                    $(this).parent().hasClass("dropdown-menu") ? $(this).addClass("animated fadeIn") : (e += i, $(this).attr("style", "animation-delay:" + e + "ms").addClass("animated " + t))
+                })
+            }(), setTimeout(function() {
+                $(".blocsapp-special-menu blocsnav").addClass("open"), $(".content-tint").addClass("on"), $("body").addClass("lock-scroll")
+            }, 10)
+        }
     }), $("body").on("mousedown touchstart", ".content-tint, .close-special-menu", function(t) {
         $(".content-tint").removeClass("on"), $(".selected-nav").click(), setTimeout(function() {
             $(".content-tint").remove()
@@ -80,7 +80,7 @@ function setUpDropdownSubs() {
 
 function stickyNavToggle() {
     var t = 0,
-        e = "sticky";
+    e = "sticky";
     if ($(".sticky-nav").hasClass("fill-bloc-top-edge")) {
         var i = $(".fill-bloc-top-edge.sticky-nav").parent().css("background-color");
         "rgba(0, 0, 0, 0)" == i && (i = "#FFFFFF"), $(".sticky-nav").css("background", i), t = $(".sticky-nav").height(), e = "sticky animated fadeInDown"
@@ -97,8 +97,8 @@ function hideAll() {
 function inViewCheck() {
     $($(".hideMe").get().reverse()).each(function(t) {
         var e = jQuery(this),
-            i = e.offset().top + e.height(),
-            a = $(window).scrollTop() + $(window).height();
+        i = e.offset().top + e.height(),
+        a = $(window).scrollTop() + $(window).height();
         if (e.height() > $(window).height() && (i = e.offset().top), i < a) {
             var o = e.attr("class").replace("hideMe", "animated");
             e.css("visibility", "hidden").removeAttr("class"), setTimeout(function() {
@@ -122,7 +122,7 @@ function setUpVisibilityToggle() {
                 a($("#" + i[t]))
             })
         } else a($("#" + e));
-
+        
         function a(t) {
             t.is("img") ? t.toggle() : t.slideToggle()
         }
@@ -133,10 +133,10 @@ function setUpLightBox() {
     window.targetLightbox, $(document).on("click", "[data-lightbox]", function(t) {
         t.preventDefault(), targetLightbox = $(this);
         var e = targetLightbox.attr("data-lightbox"),
-            i = targetLightbox.attr("data-autoplay"),
-            a = '<p class="lightbox-caption">' + targetLightbox.attr("data-caption") + "</p>",
-            o = "no-gallery-set",
-            l = targetLightbox.attr("data-frame");
+        i = targetLightbox.attr("data-autoplay"),
+        a = '<p class="lightbox-caption">' + targetLightbox.attr("data-caption") + "</p>",
+        o = "no-gallery-set",
+        l = targetLightbox.attr("data-frame");
         targetLightbox.attr("data-gallery-id") && (o = targetLightbox.attr("data-gallery-id")), targetLightbox.attr("data-caption") || (a = "");
         var n = "";
         1 == i && (n = "autoplay");
@@ -147,8 +147,8 @@ function setUpLightBox() {
     }), $(document).on("click", ".next-lightbox, .prev-lightbox", function(t) {
         t.preventDefault();
         var e = "no-gallery-set",
-            i = $("a[data-lightbox]").index(targetLightbox),
-            a = $("a[data-lightbox]").eq(i + 1);
+        i = $("a[data-lightbox]").index(targetLightbox),
+        a = $("a[data-lightbox]").eq(i + 1);
         targetLightbox.attr("data-gallery-id") && (e = targetLightbox.attr("data-gallery-id"), i = $('a[data-gallery-id="' + e + '"]').index(targetLightbox), a = $('a[data-gallery-id="' + e + '"]').eq(i + 1)), $(this).hasClass("prev-lightbox") && (a = $('a[data-gallery-id="' + e + '"]').eq(i - 1), "no-gallery-set" == e && (a = $("a[data-lightbox]").eq(i - 1)));
         var o = a.attr("data-lightbox");
         if (".mp4" == o.substring(o.length - 4)) {
