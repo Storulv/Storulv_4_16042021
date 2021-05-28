@@ -18,8 +18,12 @@ a:hover {
     cursor: pointer;
 }
 
-footer li {
+footer .col-sm-4 li {
     margin: 10px;
+}
+
+.bold {
+    font-weight: bold;
 }
 
 #page-loading-blocs-notifaction {
