@@ -765,9 +765,14 @@ h4 {
     padding: 40px 40px 40px 40px;
 }
 
+.desc-page {
+    color: #FFF !important;
+}
+
 .bold-link {
     font-weight: 900;
     text-decoration: underline!important;
+    color: #000 !important;
 }
 
 .bgc-white {
